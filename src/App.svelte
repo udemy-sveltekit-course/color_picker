@@ -3,6 +3,10 @@
   let redColor = 100;
   let greenColor = 0;
   let blueColor = 0;
+  function rgbToHex(r, g, b) {
+    return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
+  }
+  $: hexColor = rgbToHex(redColor, greenColor, blueColor);
 </script>
 
 <div class="row">
@@ -30,6 +34,11 @@
 <div class="row">
   <div class="column">
     <h2>rgb({redColor}, {greenColor}, {blueColor})</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <h2>Hex Color: {hexColor}</h2>
   </div>
 </div>
 
